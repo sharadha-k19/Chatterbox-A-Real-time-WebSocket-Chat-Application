@@ -1,0 +1,253 @@
+﻿REAL-TIME CHAT APPLICATION (CHATTERBOX)
+
+
+
+
+1. ABSTRACT
+The Real-Time Chat Application (Chatterbox) is a full-stack web application that enables users to communicate instantly using WebSocket technology. The system supports secure user registration, login authentication, token-based session management, and persistent chat history storage.
+The backend is built using FastAPI with asynchronous programming support, while the frontend uses HTML, CSS, and JavaScript. SQLite is used as the database for storing user credentials and chat messages.
+The application ensures low-latency communication, secure password handling using hashing, and a responsive user interface.
+
+
+2. INTRODUCTION
+Real-time communication applications are widely used in modern digital systems. Traditional HTTP-based systems use repeated polling, which increases server load and causes delays.
+This project implements a WebSocket-based real-time communication system using FastAPI to provide instant, bidirectional messaging between users.
+The system ensures:
+* Secure authentication
+
+* Persistent message storage
+
+* Active session handling
+
+* Smooth UI interaction
+3. PROBLEM STATEMENT
+Traditional messaging systems suffer from:
+   * High latency due to repeated HTTP requests
+
+   * No persistent connection
+
+   * Poor session management
+
+   * Security risks in password handling
+
+There is a need for a system that:
+      * Provides low-latency real-time communication
+
+      * Maintains persistent connections
+
+      * Secures user credentials
+
+      * Stores chat history reliably
+4. OBJECTIVES
+The main objectives of this project are:
+         * To implement real-time communication using WebSockets
+
+         * To design secure authentication using hashed passwords
+
+         * To maintain token-based active sessions
+
+         * To store chat messages in SQLite database
+
+         * To create a responsive and animated user interface
+5.SYSTEM ARCHITECTURE
+Architecture Overview
+Client (Browser)
+⬇
+FastAPI Backend
+⬇
+WebSocket Layer
+⬇
+SQLite Database
+Components:
+            1. Frontend (HTML, CSS, JS)
+
+            2. FastAPI server
+
+            3. WebSocket connection
+
+            4. SQLite database
+
+The architecture ensures asynchronous communication and efficient handling of multiple users.
+6.TECHNOLOGY STACK
+Backend:
+               * FastAPI
+
+               * WebSockets
+
+               * SQLite
+
+               * Bcrypt (password hashing)
+
+               * UUID tokens
+
+Frontend:
+                  * HTML5
+
+                  * CSS3
+
+                  * JavaScript
+7. DATABASE DESIGN
+The system uses SQLite database with the following tables:
+Users Table
+                     * id (Primary Key)
+
+                     * username
+
+                     * email
+
+                     * hashed_password
+
+ActiveUsers Table
+                        * token (UUID)
+
+                        * user_id
+
+                        * session details
+
+Messages Table
+                           * id
+
+                           * sender
+
+                           * content
+
+                           * timestamp
+
+The database ensures data persistence and reliability.
+8. MODULE DESCRIPTION
+8.1 Authentication Module
+                              * Handles registration and login
+
+                              * Hashes passwords using secure algorithm
+
+                              * Generates UUID tokens
+
+                              * Verifies user credentials
+
+8.2 WebSocket Module
+                                 * Establishes persistent connection
+
+                                 * Handles bi-directional communication
+
+                                 * Broadcasts messages to connected users
+
+8.3 Database Module
+                                    * Stores user data securely
+
+                                    * Saves chat messages
+
+                                    * Retrieves chat history
+
+8.4 Frontend Module
+                                       * Handles UI rendering
+
+                                       * Displays chat messages
+
+                                       * Controls login/register toggle
+
+                                       * Sends messages using WebSocket
+
+9.WORKING PROCESS
+
+
+                                          1. User registers using username, email, and password.
+
+                                          2. Password is hashed before storing.
+
+                                          3. User logs in.
+
+                                          4. Server verifies credentials.
+
+                                          5. Server generates a UUID token.
+
+                                          6. WebSocket connection is established.
+
+                                          7. User sends message.
+
+                                          8. Server stores message in database.
+
+                                          9. Server broadcasts message to connected clients.
+
+                                          10. Clients display messages instantly.
+
+
+
+
+10.USER INTERFACE FEATURES
+
+
+                                             * Gradient animated background
+
+                                             * Message bubbles
+
+                                             * Separate alignment for sent and received messages
+
+                                             * Smooth message animation
+
+                                             * Login/Register toggle mode
+
+
+11. SECURITY FEATURES
+
+
+                                                * Password hashing using Bcrypt
+
+                                                * Token-based session management
+
+                                                * Secure credential verification
+
+                                                * Controlled WebSocket access
+
+
+
+
+
+
+
+
+
+
+
+
+12. ADVANTAGES
+                                                   * Low-latency communication
+
+                                                   * Lightweight frontend
+
+                                                   * Scalable async backend
+
+                                                   * Persistent chat history
+
+                                                   * Secure authentication system
+
+
+13. LIMITATIONS
+                                                      * Single public chat room
+
+                                                      * No media sharing
+
+                                                      * SQLite not suitable for very large production systems
+
+                                                      * No end-to-end encryption
+
+
+14. FUTURE ENHANCEMENTS
+                                                         * Private chat rooms
+
+                                                         * Typing indicator
+
+                                                         * Online/Offline status
+
+                                                         * Media sharing (Images, videos)
+
+                                                         * End-to-end encryption
+
+                                                         * Cloud deployment (AWS / Render)
+
+                                                         * Migration to PostgreSQL for scalability
+
+
+15. CONCLUSION
+The Real-Time Chat Application successfully demonstrates full-stack web development using FastAPI and WebSockets. It provides secure authentication, real-time messaging, and persistent database storage.
+The project showcases knowledge of asynchronous programming, database design, frontend development, and secure backend architecture.
+It can be extended into a production-level scalable messaging platform.
